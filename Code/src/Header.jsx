@@ -38,10 +38,10 @@ function Header() {
           : "bg-white shadow-sm"
       }`}>
       {/* GOLD ACCENT LINE */}
-      <div className="h-[3px] bg-[#C5941C]" />
+      <div className="h-0.75 bg-[#C5941C]" />
 
       <div className="py-6 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="px-4 md:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
           {/* LOGO */}
           <div className="group cursor-pointer">
             <img

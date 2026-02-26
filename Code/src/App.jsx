@@ -1,224 +1,110 @@
 import React, { useState } from "react";
-import logo from "./assets/logo.png";
 import Header from "./Header.jsx";
 
+// Note: Ensure these are in your index.html:
+// <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [formLoaded, setFormLoaded] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    // later when backend added
-    // await fetch(...)
-
-    setTimeout(() => {
-      setLoading(false);
-      alert("Registered successfully!");
-    }, 1000);
-  };
+  // Updated URL
+  const microsoftFormUrl =
+    "https://forms.office.com/Pages/ResponsePage.aspx?id=vOOLNLOpdUel8NOiEjo_Mwj5KIY3m59CiLB3eRlQVhRUNVk5NVU1TDFLNVNCNEZOWFNLVTBTU05VQy4u";
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA] text-[#002855] font-serif pt-36 md:pt-28">
-      {/* T`op` Accent Bar */}
-      <div className="h-4 bg-[#C5941C]" />
+    <div className="min-h-screen bg-[#FAFAFA] text-[#002855] font-['Inter'] pt-32 md:pt-24">
+      {/* Top Accent Bar */}
+      <div className="h-5 bg-[#C5941C]" />
 
-      {/* Header with Logo Space */}
       <Header />
 
-      <main className="max-w-6xl mx-auto px-6 py-12">
-        {/* Info Ribbon */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-16 border border-[#C5941C] rounded-lg overflow-hidden">
-          <InfoBox label="Event Dates" value="March 28 - 31, 2026" />
-          <InfoBox label="Primary Venue" value="University Auditorium" border />
-          <InfoBox label="Registration Deadline" value="March 10, 2024" />
+      <main className="mx-auto px-[10%] py-12">
+        {/* Infobox Ribbon */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-16 border-2 border-[#C5941C] rounded-xl overflow-hidden shadow-lg">
+          <InfoBox label="Event Dates" value="MARCH 28 - 31, 2026" />
+          <InfoBox label="Primary Venue" value="CHANAKYA UNIVERSITY" border />
+          <InfoBox label="Registration" value="BY MARCH 10, 2026" />
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-12">
-          {/* Left Column: Form */}
-          <section className="lg:col-span-8 group bg-white rounded-xl shadow-2xl shadow-blue-900/5 border border-gray-300 overflow-hidden">
-            <div className="bg-[#002855] px-8 py-5 text-white flex justify-between items-center">
+        <div className="grid lg:grid-cols-12 gap-10">
+          {/* Registration Portal Section */}
+          <section className="lg:col-span-9 group bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+            <div className="bg-[#002855] px-8 md:px-12 py-10 text-white flex justify-between items-center border-b-4 border-[#C5941C]">
               <div>
-                <h2 className="text-xl font-semibold tracking-wide">
+                <h2 className="text-3xl md:text-4xl font-['Playfair_Display'] font-bold tracking-wide">
                   Registration Portal
                 </h2>
-                <p className="text-[#C5941C] text-xs font-sans uppercase mt-1 tracking-wider">
-                  Official Entry Form
+                <p className="text-[#C5941C] text-xs md:text-sm font-semibold uppercase mt-3 tracking-[0.4em]">
+                  Official Delegate Entry 2026
                 </p>
               </div>
-              {/* Decorative element instead of emoji */}
-              <div className="h-8 w-8 border-2 border-[#C5941C] rotate-45 group-hover:bg-[#C5941C] group-hover:rotate-135 transition-all duration-300" />
+              {/* Animated Accent Square */}
+              <div className="h-12 w-12 border-2 border-[#C5941C] rotate-45 group-hover:bg-[#C5941C] group-hover:rotate-[135deg] transition-all duration-500 hidden md:block" />
             </div>
 
-            <div className="relative min-h-175 bg-gray-50">
-              <div className="bg-gray-50 p-8">
-                <form className="space-y-6 font-sans">
-                  {/* Name */}
-                  <div>
-                    <label className="block text-sm mb-1">Full Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Enter your name"
-                      className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#C5941C]"
-                      required
-                    />
-                  </div>
+            <div className="relative min-h-[800px] md:min-h-[75vh] bg-gray-50">
+              {!formLoaded && (
+                <div className="absolute inset-0 flex flex-col justify-center items-center bg-white z-10">
+                  <div className="w-16 h-16 border-4 border-[#002855]/10 border-t-[#C5941C] rounded-full animate-spin"></div>
+                  <p className="mt-8 text-xs font-bold tracking-[0.4em] text-gray-400 uppercase">
+                    Loading University Portal
+                  </p>
+                </div>
+              )}
 
-                  {/* Email */}
-                  <div>
-                    <label className="block text-sm mb-1">Email Address</label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Enter your email"
-                      className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#C5941C]"
-                      required
-                    />
-                  </div>
-
-                  {/* Phone */}
-                  <div>
-                    <label className="block text-sm mb-1">Phone Number</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Enter your phone number"
-                      className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#C5941C]"
-                      required
-                    />
-                  </div>
-
-                  {/* College / Department */}
-                  <div>
-                    <label className="block text-sm mb-1">
-                      College / Department
-                    </label>
-                    <input
-                      type="text"
-                      name="college"
-                      placeholder="Enter your college"
-                      className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#C5941C]"
-                    />
-                  </div>
-
-                  {/* Event Selection */}
-                  <div>
-                    <label className="block text-sm mb-1">Select Event</label>
-                    <select
-                      name="event"
-                      className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#C5941C]"
-                      required>
-                      <option value="">Choose an event</option>
-                      <option>Solo Singing</option>
-                      <option>Group Dance</option>
-                      <option>Dramatics</option>
-                      <option>Fine Arts</option>
-                      <option>Photography</option>
-                      <option>Literary Symposium</option>
-                    </select>
-                  </div>
-
-                  {/* Team Size */}
-                  <div>
-                    <label className="block text-sm mb-1">
-                      Team Size (if applicable)
-                    </label>
-                    <input
-                      type="number"
-                      name="teamSize"
-                      placeholder="Enter team size"
-                      min="1"
-                      className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#C5941C]"
-                    />
-                  </div>
-
-                  {/* Notes */}
-                  <div>
-                    <label className="block text-sm mb-1">
-                      Additional Notes
-                    </label>
-                    <textarea
-                      name="notes"
-                      rows="3"
-                      placeholder="Anything we should know?"
-                      className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#C5941C]"
-                    />
-                  </div>
-
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="bg-[#002855] text-white py-3 rounded-md w-full cursor-pointer hover:bg-white hover:text-[#002855] hover:ring-2 hover:ring-[#002855] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
-                    {loading ? "Submitting..." : "Submit Registration"}
-                  </button>
-                </form>
-              </div>
+              <iframe
+                src={microsoftFormUrl}
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                onLoad={() => setFormLoaded(true)}
+                className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
+                  formLoaded ? "opacity-100" : "opacity-0"
+                }`}
+                title="Cultural Fest Registration"
+                allowFullScreen>
+                Loading...
+              </iframe>
             </div>
           </section>
 
-          {/* Right Column: Event List & Details */}
-          <aside className="lg:col-span-4 space-y-8">
-            <div className="bg-white p-8 rounded-xl border-l-4 border-[#C5941C] shadow-sm">
-              <h3 className="text-xl font-bold mb-6 border-b border-gray-100 pb-2">
-                Performing Arts
+          {/* Sidebar */}
+          <aside className="lg:col-span-3 space-y-8">
+            <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border-t-8 border-[#002855]">
+              <h3 className="text-2xl font-['Playfair_Display'] font-bold mb-8 border-b border-gray-100 pb-4">
+                Fest Tracks
               </h3>
-              <ul className="space-y-4 font-sans text-sm">
-                <li className="flex justify-between items-center">
-                  <span>Solo Singing (Classical/Western)</span>
-                  <div className="h-1.5 w-1.5 bg-[#C5941C]" />
-                </li>
-                <li className="flex justify-between items-center">
-                  <span>Group Dance Showcase</span>
-                  <div className="h-1.5 w-1.5 bg-[#C5941C]" />
-                </li>
-                <li className="flex justify-between items-center">
-                  <span>Theatrical Dramatics</span>
-                  <div className="h-1.5 w-1.5 bg-[#C5941C]" />
-                </li>
+              <ul className="space-y-6 text-base font-semibold">
+                <EventItem name="Performing Arts" color="#C5941C" />
+                <EventItem name="Creative Exhibits" color="#C5941C" />
+                <EventItem name="Literary Events" color="#C5941C" />
+                <EventItem name="Tech Innovations" color="#C5941C" />
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border-l-4 border-[#002855] shadow-sm">
-              <h3 className="text-xl font-bold mb-6 border-b border-gray-100 pb-2">
-                Creative Exhibits
-              </h3>
-              <ul className="space-y-4 font-sans text-sm">
-                <li className="flex justify-between items-center">
-                  <span>Fine Arts Exhibition</span>
-                  <div className="h-1.5 w-1.5 bg-[#002855]" />
-                </li>
-                <li className="flex justify-between items-center">
-                  <span>Digital Photography</span>
-                  <div className="h-1.5 w-1.5 bg-[#002855]" />
-                </li>
-                <li className="flex justify-between items-center">
-                  <span>Literary Symposium</span>
-                  <div className="h-1.5 w-1.5 bg-[#002855]" />
-                </li>
-              </ul>
-            </div>
-
-            <div className="p-6 bg-[#002855] text-white rounded-xl text-center">
-              <p className="text-xs uppercase tracking-[0.2em] mb-2 text-[#C5941C]">
-                Questions?
+            <div className="p-10 bg-[#002855] text-white rounded-2xl shadow-xl">
+              <p className="text-[10px] font-black uppercase tracking-widest mb-4 text-[#C5941C]">
+                Contact Secretariat
               </p>
-              <p className="font-sans text-sm">
-                contact@chanakyauniversity.edu.in
+              <p className="text-sm font-light opacity-80 leading-relaxed mb-6">
+                Direct all queries regarding team slots and campus logistics
+                here:
+              </p>
+              <p className="font-bold border-t border-white/10 pt-6 text-base break-words">
+                iisc@chanakyauniversity.edu.in
               </p>
             </div>
           </aside>
         </div>
       </main>
 
-      <footer className="bg-white border-t border-gray-200 py-12 mt-12">
-        <div className="max-w-6xl mx-auto px-6 text-center font-sans">
-          <p className="text-xs text-gray-400 uppercase tracking-widest">
+      <footer className="bg-white border-t border-gray-100 py-24 mt-16">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p className="text-xs text-gray-400 font-black uppercase tracking-[0.7em] mb-8">
             Rooted in Ideals • Ascending with Ideas
           </p>
-          <p className="mt-4 text-sm text-[#002855] font-medium">
-            © 2024 Chanakya University. All Rights Reserved.
+          <p className="text-lg text-[#002855] font-['Playfair_Display'] font-bold">
+            © 2026 Chanakya University Cultural Committee
           </p>
         </div>
       </footer>
@@ -228,12 +114,26 @@ function App() {
 
 const InfoBox = ({ label, value, border }) => (
   <div
-    className={`p-6 bg-white text-center ${border ? "md:border-x border-[#C5941C]" : ""}`}>
-    <h4 className="text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-1">
+    className={`p-6 bg-white text-center flex flex-col justify-center ${border ? "md:border-x-2 border-[#C5941C]" : ""}`}>
+    <h4 className="text-[10px] md:text-xs font-['Inter'] font-bold uppercase tracking-widest text-gray-400 mb-4">
       {label}
     </h4>
-    <p className="font-bold text-[#002855]">{value}</p>
+    <p className="text-lg md:text-xl font-['Playfair_Display'] font-bold text-[#002855] tracking-tight">
+      {value}
+    </p>
   </div>
+);
+
+const EventItem = ({ name, color }) => (
+  <li className="flex justify-between items-center group cursor-default">
+    <span className="group-hover:text-[#C5941C] transition-colors duration-300 tracking-tight">
+      {name}
+    </span>
+    <div
+      className="h-2 w-2 rounded-sm rotate-45 transition-all group-hover:scale-150 group-hover:bg-[#002855]"
+      style={{ backgroundColor: color }}
+    />
+  </li>
 );
 
 export default App;
