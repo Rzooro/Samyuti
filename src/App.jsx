@@ -107,7 +107,7 @@ function App() {
       theme: "Social Awareness Challenges",
       prize: "₹10,000",
       context:
-        "Create impactful short videos highlighting meaningful real-world challenges and thoughtful solutions[cite: 64, 116].",
+        "Create impactful short videos highlighting meaningful real-world challenges and thoughtful solutions.",
       rules: [
         "Focus on social awareness",
         "Foster responsible communication",
