@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import logo from "./assets/logo.png";
+import iic from "./assets/iic.png";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -40,14 +41,11 @@ function Header() {
               className="w-48 h-12 md:w-56 md:h-14 object-contain"
             />
             <div className="hidden md:block w-px h-10 bg-gray-200" />
-            <div className="hidden md:block">
-              <h2 className="text-xl font-libre font-bold tracking-tight uppercase">
-                Samyuti <span className="text-[#C5941C]">2026</span>
-              </h2>
-              <p className="text-[10px] font-sans tracking-[0.2em] uppercase opacity-60">
-                Official Portal
-              </p>
-            </div>
+            <img
+              src={iic}
+              alt="IIC Logo"
+              className="w-24 md:w-32 object-contain"
+            />
           </div>
           <button
             onClick={scrollToRegister}
