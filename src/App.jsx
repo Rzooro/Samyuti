@@ -48,8 +48,8 @@ function App() {
     },
     {
       title: "Hardware Hackathon",
-      theme: "Transforming Raw Components",
-      prize: "₹60,000",
+      theme: "IoT For University, Sustainbility",
+      prize: "₹1,20,000",
       context:
         "A 72-hour marathon where teams transform raw components into real-world solutions like smart campus tech.",
       rules: [
