@@ -57,7 +57,7 @@ function App() {
         "No pre-built kits allowed",
         "Deliver working prototype and code",
       ],
-      coordinators: "Vaibhav, Abhilash Reddy, Srivatsa",
+      coordinators: "Abhilash Reddy, Vaibhav",
       contact: "vaibhav.std@chanakya.edu.in",
     },
     {
