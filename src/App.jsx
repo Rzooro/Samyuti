@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header.jsx";
 import EventSection from "./EventSection.jsx";
 import usePreventIframeScroll from "./usePreventIframeScroll";
@@ -8,6 +8,25 @@ function App() {
   const [activeEvent, setActiveEvent] = useState(null);
 
   usePreventIframeScroll();
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        // Shown when the user switches to another tab
+        document.title = "Register Now!"; //
+      } else {
+        // Restored when the user returns to your portal
+        document.title = "SAMYUTI 2026"; // [cite: 1, 72]
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    // Clean up listener on component unmount
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
 
   const microsoftFormUrl =
     "https://forms.office.com/Pages/ResponsePage.aspx?id=vOOLNLOpdUel8NOiEjo_Mwj5KIY3m59CiLB3eRlQVhRUNVk5NVU1TDFLNVNCNEZOWFNLVTBTU05VQy4u";
