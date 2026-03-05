@@ -38,13 +38,13 @@ function Header() {
             <img
               src={logo}
               alt="Chanakya University Logo"
-              className="w-32 md:w-56 object-contain"
+              className="w-20 sm:w-32 md:w-56 object-contain"
             />
             <div className="hidden md:block w-px h-10 bg-gray-200" />
             <img
               src={iic}
               alt="IIC Logo"
-              className="w-22 md:w-32 object-contain"
+              className="w-14 sm:w-18 md:w-32 object-contain"
             />
           </div>
           <button

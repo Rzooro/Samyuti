@@ -10,4 +10,8 @@
   --font-libre: "Libre Baskerville", serif;
   --font-georgia: "Georgia", serif;
   --font-zilla: "Zilla Slab", serif;
+
+  --breakpoint-sm: 24rem;
+  --breakpoint-md: 60rem;
+  --breakpoint-lg: 72rem;
 }
