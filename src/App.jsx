@@ -12,20 +12,14 @@ function App() {
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (document.hidden) {
-        // Shown when the user switches to another tab
-        document.title = "Register Now!"; //
+        document.title = "Register Now!";
       } else {
-        // Restored when the user returns to your portal
-        document.title = "SAMYUTI 2026"; // [cite: 1, 72]
+        document.title = "SAMYUTI 2026";
       }
     };
-
     document.addEventListener("visibilitychange", handleVisibilityChange);
-
-    // Clean up listener on component unmount
-    return () => {
+    return () =>
       document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
   }, []);
 
   const microsoftFormUrl =
@@ -43,7 +37,6 @@ function App() {
     <div className="min-h-screen bg-[#FAFAFA] text-[#002855] font-['Inter'] scroll-smooth">
       <Header />
 
-      {/* Hero Section */}
       <section className="pt-48 pb-20 px-4 text-center bg-white border-b border-gray-100">
         <h1 className="text-6xl md:text-8xl font-libre font-bold mb-6 tracking-tight uppercase">
           SAMYUTI <span className="text-[#C5941C]">2026</span>
@@ -59,7 +52,6 @@ function App() {
       </section>
 
       <main className="max-w-7xl mx-auto px-4 py-16">
-        {/* Infobox Ribbon */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-24 border-2 border-[#C5941C] rounded-xl overflow-hidden shadow-xl bg-white">
           <InfoBox label="Event Dates" value="MARCH 28 - 31, 2026" />
           <InfoBox label="Primary Venue" value="GLOBAL CAMPUS, CU" border />
@@ -68,11 +60,9 @@ function App() {
 
         <EventSection onOpenModal={(event) => setActiveEvent(event)} />
 
-        {/* ELEGANT REMODELED MODAL */}
         {activeEvent && (
           <div className="fixed inset-0 z-[100] hidden md:flex items-center justify-center p-4 bg-[#002855]/70 backdrop-blur-md transition-all duration-300">
             <div className="relative w-full max-w-3xl bg-white rounded-[2.5rem] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden border border-gray-100 animate-in zoom-in duration-300">
-              {/* Header */}
               <div className="bg-[#002855] p-10 text-white border-b-4 border-[#C5941C] flex justify-between items-center">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#C5941C] mb-2">
@@ -100,9 +90,8 @@ function App() {
                 </button>
               </div>
 
-              {/* Body Content */}
               <div className="p-12 max-h-[50vh] overflow-y-auto scrollbar-thin scrollbar-thumb-[#C5941C] scrollbar-track-gray-50">
-                <div className="grid md:grid-cols-2 gap-6 text-[#002855]">
+                <div className="grid md:grid-cols-2 gap-10 text-[#002855]">
                   <div className="space-y-8">
                     <div>
                       <strong className="uppercase text-[10px] font-black tracking-widest block mb-3 text-gray-400">
@@ -135,8 +124,7 @@ function App() {
                       </ul>
                     </div>
                   </div>
-
-                  <div className="space-y-8 border-l border-gray-100 pl-6">
+                  <div className="space-y-8 border-l border-gray-100 pl-10">
                     <div>
                       <p className="font-black uppercase tracking-widest opacity-40 mb-4 text-[10px]">
                         Coordinators
@@ -164,7 +152,6 @@ function App() {
                 </div>
               </div>
 
-              {/* REMODELED FOOTER: Balanced Action Bar */}
               <div className="bg-gray-50 p-8 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-6 px-12">
                 <div className="flex items-center gap-4 bg-white px-8 py-4 rounded-2xl border border-gray-200 shadow-sm">
                   <span className="text-gray-400 text-[10px] font-black uppercase tracking-widest">
@@ -174,10 +161,9 @@ function App() {
                     {activeEvent.prize}
                   </span>
                 </div>
-
                 <button
                   onClick={handleModalRegister}
-                  className="w-full cursor-pointer md:w-auto bg-[#002855] text-white px-12 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#C5941C] transition-all duration-500 shadow-[0_10px_20px_rgba(80,110,140,0.3)] hover:shadow-none active:scale-95 border-2 border-[#C5941C]">
+                  className="w-full cursor-pointer md:w-auto bg-[#002855] text-white px-12 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#C5941C] transition-all duration-500 shadow-lg border-2 border-[#C5941C]">
                   Register Now
                 </button>
               </div>
@@ -185,7 +171,6 @@ function App() {
           </div>
         )}
 
-        {/* Form Section */}
         <section
           id="registration"
           className="group bg-white rounded-[2.5rem] shadow-2xl border border-gray-200 overflow-hidden mb-32">
@@ -215,10 +200,9 @@ function App() {
           </div>
         </section>
 
-        {/* Logistics */}
-        <section className="flex flex-col lg:flex-row gap-8 mb-32">
+        <section className="flex flex-col lg:flex-row gap-8 mb-32 items-stretch">
           <div className="flex-1 bg-[#002855] text-white p-12 rounded-[2.5rem] shadow-xl border-b-8 border-[#C5941C] flex flex-col justify-center">
-            <h2 className="text-4xl font-libre font-bold mb-8 border-b border-white/10 pb-4 tracking-tighter">
+            <h2 className="text-4xl font-libre font-bold mb-8 border-b border-white/10 pb-4">
               Campus Logistics
             </h2>
             <div className="space-y-10">
@@ -232,11 +216,11 @@ function App() {
               </div>
               <div>
                 <p className="text-[#C5941C] text-[10px] font-black uppercase tracking-widest mb-3">
-                  Campus
+                  Address
                 </p>
                 <p className="text-lg font-light leading-relaxed opacity-80">
-                  Chanakya University Global Campus, NH-648, Haraluru -
-                  Polanahalli, Bengaluru, Karnataka - 562165
+                  Chanakya University Global Campus, NH-648, Polanahalli,
+                  Bengaluru - 562165
                 </p>
               </div>
             </div>
@@ -265,8 +249,8 @@ function App() {
               SAMYUTI 2026
             </span>
             <div className="hidden md:block h-6 w-px bg-white/20" />
-            <span className="text-lg opacity-60 tracking-widest uppercase">
-              CHANAKYA UNIVERSITY
+            <span className="text-lg opacity-60 tracking-widest uppercase text-white">
+              Chanakya University
             </span>
           </div>
           <p className="text-sm opacity-40">

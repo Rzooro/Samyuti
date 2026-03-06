@@ -6,11 +6,14 @@ const samyutiEvents = [
     theme: "Celebrating Historical Indian Women",
     prize: "₹10,000",
     context:
-      "Craft original AI-assisted stories highlighting the courage of iconic historical Indian women.",
+      "Craft original AI-assisted stories highlighting the courage and contributions of iconic historical Indian women.",
     rules: ["Use Perplexity AI", "Max 2000 words", "1-hour duration"],
-    leads: ["V Vidhu Krishna", "Sourabha B N"],
-    phones: ["+91 96008 60002", "+91 94801 44714"],
-    emails: ["vidhuk.ema24@chanakyauniversity.edu.in"],
+    leads: ["Sourabha B N", "V Vidhu Krishna"],
+    phones: ["+91 94801 44714", "+91 96008 60002"],
+    emails: [
+      "sourabhabn.ecs24@chanakyauniversity.edu.in",
+      "vidhuk.ema24@chanakyauniversity.edu.in",
+    ],
   },
   {
     title: "Culture Speaks AI",
@@ -23,9 +26,12 @@ const samyutiEvents = [
       "Solo (45s-3m) | Group (2m-3m)",
       "Full dance not permitted",
     ],
-    leads: ["Neha Rajkumar", "Shyama Rai"],
-    phones: ["+91 91083 71116", "+91 76949 95982"],
-    emails: ["nehar.eai24@chanakyauniversity.edu.in"],
+    leads: ["Shyama Rai", "Neha Rajkumar"],
+    phones: ["+91 76949 95982", "+91 91083 71116"],
+    emails: [
+      "shyamar.eai24@chanakyauniversity.edu.in",
+      "nehar.eai24@chanakyauniversity.edu.in",
+    ],
   },
   {
     title: "IKS Hackathon",
@@ -40,14 +46,17 @@ const samyutiEvents = [
     ],
     leads: ["Prithvi S Hegde", "Suprajna S"],
     phones: ["+91 70195 38181", "+91 97315 77988"],
-    emails: ["prithvih.ecs24@chanakyauniversity.edu.in"],
+    emails: [
+      "prithvih.ecs24@chanakyauniversity.edu.in",
+      "suprajnah.eai24@chanakyauniversity.edu.in",
+    ],
   },
   {
     title: "Hardware Hackathon",
     theme: "72-Hour Build Marathon",
     prize: "₹1,20,000",
     context:
-      "Transform raw components into real-world solutions through an on-site 72-hour marathon.",
+      "Transform raw components into real-world solutions through an on-site continuous 72-hour marathon.",
     rules: [
       "Stay on-site for 72 hours",
       "No pre-built kits",
@@ -55,7 +64,10 @@ const samyutiEvents = [
     ],
     leads: ["Abhilash N S Reddy", "Vaibhav K Joshi"],
     phones: ["+91 81473 82695", "+91 88501 79947"],
-    emails: ["abhilashr.eai24@chanakyauniversity.edu.in"],
+    emails: [
+      "abhilashr.eai24@chanakyauniversity.edu.in",
+      "vaibhavkj.ecs24@chanakyauniversity.edu.in",
+    ],
   },
   {
     title: "Gaming: Code the Past",
@@ -70,7 +82,10 @@ const samyutiEvents = [
     ],
     leads: ["Yashas G Hombal", "Sarvesh A Patil"],
     phones: ["+91 99860 62018", "+91 63611 65646"],
-    emails: ["yashasgb.eai24@chanakyauniversity.edu.in"],
+    emails: [
+      "yashasgb.eai24@chanakyauniversity.edu.in",
+      "sarveshap.eec@chanakyauniversity.edu.in",
+    ],
   },
   {
     title: "Treasure Hunt",
@@ -85,7 +100,10 @@ const samyutiEvents = [
     ],
     leads: ["Prateek Joshi", "Abhishek Yadav K"],
     phones: ["+91 95289 83012", "+91 94834 23550"],
-    emails: ["prateekj.eve24@chanakyauniversity.edu.in"],
+    emails: [
+      "prateekj.eve24@chanakyauniversity.edu.in",
+      "abhishekyk.ema25@chanakyauniversity.edu.in",
+    ],
   },
   {
     title: "E-Sports (Valorant)",
@@ -100,7 +118,10 @@ const samyutiEvents = [
     ],
     leads: ["Dheeraj V Gowda", "Adith Aiyanna"],
     phones: ["+91 93537 47945", "+91 74839 26420"],
-    emails: ["dheerajvg.eai24@chanakyauniversity.edu.in"],
+    emails: [
+      "dheerajvg.eai24@chanakyauniversity.edu.in",
+      "adithk.ema24@chanakyauniversity.edu.in",
+    ],
   },
   {
     title: "Video Creation",
@@ -115,7 +136,10 @@ const samyutiEvents = [
     ],
     leads: ["Nikith K", "Mohammed Tanzeel J M"],
     phones: ["+91 93984 91930", "+91 79752 84313"],
-    emails: ["nikithk.eai24@chanakyauniversity.edu.in"],
+    emails: [
+      "nikithk.eai24@chanakyauniversity.edu.in",
+      "mohammedjm.eve24@chanakyauniversity.edu.in",
+    ],
   },
   {
     title: "IKS Quiz",
@@ -130,20 +154,23 @@ const samyutiEvents = [
     ],
     leads: ["Darshan Venkatesh", "Vamshi Kanithi"],
     phones: ["+91 80887 93889", "+91 93467 95738"],
-    emails: ["darshanv.eec24@chanakyauniversity.edu.in"],
+    emails: [
+      "darshanv.eec24@chanakyauniversity.edu.in",
+      "vamshik.eec24@chanakyauniversity.edu.in",
+    ],
   },
 ];
 
 export default function EventSection({ onOpenModal }) {
   return (
     <section className="mb-32">
-      <div className="flex items-center gap-6 mb-16">
-        <h2 className="text-4xl md:text-5xl font-libre font-bold whitespace-nowrap">
+      <div className="flex items-center gap-6 mb-16 px-4 max-w-7xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-libre font-bold text-[#002855]">
           Event Tracks
         </h2>
-        <div className="h-px flex-1 bg-gradient-to-r from-[#C5941C] to-transparent opacity-20" />
+        <div className="h-px flex-1 bg-gradient-to-r from-[#C5941C] to-transparent opacity-30" />
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 max-w-7xl mx-auto">
         {samyutiEvents.map((event, idx) => (
           <EventCard
             key={idx}
@@ -158,19 +185,14 @@ export default function EventSection({ onOpenModal }) {
 
 function EventCard({ event, onOpen }) {
   const [isTapped, setIsTapped] = useState(false);
-
   const handleInteraction = () => {
-    if (window.innerWidth < 768) {
-      setIsTapped(!isTapped);
-    } else {
-      onOpen();
-    }
+    window.innerWidth < 768 ? setIsTapped(!isTapped) : onOpen();
   };
 
   return (
     <div
       onClick={handleInteraction}
-      className="relative h-[420px] bg-white rounded-3xl border border-gray-100 shadow-lg overflow-hidden cursor-pointer transition-all duration-300 md:hover:-translate-y-3 md:hover:shadow-2xl border-l-8 border-l-[#C5941C] p-10 flex flex-col justify-between group">
+      className="relative h-[420px] bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden cursor-pointer transition-all duration-300 md:hover:-translate-y-3 md:hover:shadow-2xl border-l-8 border-l-[#C5941C] p-10 flex flex-col justify-between group">
       <div>
         <p className="text-[10px] font-black text-[#C5941C] uppercase tracking-[0.4em] mb-4">
           {event.theme}
@@ -181,14 +203,13 @@ function EventCard({ event, onOpen }) {
       </div>
       <div className="pt-6 border-t border-gray-50 flex justify-between items-center font-bold text-[#002855]">
         <span className="text-lg">Prize Pool: {event.prize}</span>
-        <span className="text-xs italic tracking-widest text-[#C5941C]">
-          Click to explore
+        <span className="text-[10px] uppercase tracking-widest text-[#C5941C]">
+          Explore +
         </span>
       </div>
 
       <div
-        className={`absolute inset-0 bg-[#002855] p-10 transition-transform duration-300 ease-in-out flex flex-col z-20 md:hidden 
-        ${isTapped ? "translate-y-0" : "translate-y-full"}`}>
+        className={`absolute inset-0 bg-[#002855] p-10 transition-transform duration-300 ease-in-out flex flex-col z-20 md:hidden ${isTapped ? "translate-y-0" : "translate-y-full"}`}>
         <h4 className="text-[#C5941C] font-libre font-bold text-2xl mb-6 border-b border-[#C5941C]/30 pb-3">
           Event Intel
         </h4>
