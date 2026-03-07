@@ -134,7 +134,7 @@ const samyutiEvents = [
       "adithk.ema24@chanakyauniversity.edu.in",
     ],
     pdfUrl:
-      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQDh0ZmLjYnRTYh4PrqBA9dDAWJ9caCPKT14-EB-leu-Tlc?e=VCUJnj",
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQC15YVTFiaISIzzcjzSKOTMAe_3PzeaMTLWn4FgmXdMsmY?e=tlgh7D",
   },
   {
     title: "Dhristi Manthan",
