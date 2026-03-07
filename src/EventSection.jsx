@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const samyutiEvents = [
   {
-    title: "AI Storytelling",
+    title: "Smrithi Mandaara",
     theme: "Celebrating Historical Indian Women",
     prize: "₹10,000",
     context:
@@ -14,11 +14,13 @@ const samyutiEvents = [
       "sourabhabn.ecs24@chanakyauniversity.edu.in",
       "vidhuk.ema24@chanakyauniversity.edu.in",
     ],
+    pdfUrl:
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQBTSM0NRasKRZ74miFhRUz9AQwQjepdty4wQZ6oJ1GCXlA?e=IkdTVp", // Unique link for each event
   },
   {
-    title: "Culture Speaks AI",
+    title: "Vastra Verse",
     theme: "Traditional Attire & AI Narration",
-    prize: "₹22,500",
+    prize: "₹24,000",
     context:
       "Walk the runway while an AI narrates the cultural significance of your traditional attire.",
     rules: [
@@ -32,17 +34,19 @@ const samyutiEvents = [
       "shyamar.eai24@chanakyauniversity.edu.in",
       "nehar.eai24@chanakyauniversity.edu.in",
     ],
+    pdfUrl:
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQAcvXjPTowCRJqzWV4kaladAdcKHgyNwFcFxLlnzmLxDbQ?e=mgq53V",
   },
   {
-    title: "IKS Hackathon",
+    title: "IKS Online Hackathon",
     theme: "Heritage & Tech Innovation",
     prize: "₹60,000",
     context:
-      "An open-stack innovation event integrating Indian Knowledge Systems (IKS) with modern AI.",
+      "An open-stack innovation event centered on integrating Indian Knowledge Systems (IKS) with modern AI.",
     rules: [
       "Teams of 2-4",
-      "Video pitch & Git repo",
-      "Live demo for finalists",
+      "Video pitch & Git repository",
+      "Live demo for finalists in Campus",
     ],
     leads: ["Prithvi S Hegde", "Suprajna S"],
     phones: ["+91 70195 38181", "+91 97315 77988"],
@@ -50,13 +54,15 @@ const samyutiEvents = [
       "prithvih.ecs24@chanakyauniversity.edu.in",
       "suprajnah.eai24@chanakyauniversity.edu.in",
     ],
+    pdfUrl:
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQA2vgS5y-LhQowoh06CHvqMAXKaQTIoBrUTdLb2arUuns0?e=n1Sox7",
   },
   {
     title: "Hardware Hackathon",
-    theme: "72-Hour Build Marathon",
+    theme: "IoT for University, Sustainibilty",
     prize: "₹1,20,000",
     context:
-      "Transform raw components into real-world solutions through an on-site continuous 72-hour marathon.",
+      "This 72-hour hardware hackathon challenges teams to solve real-world problems by developing functional, innovative prototypes. Participants must apply creative problem-solving and technical skills within the time limit to deliver tangible solutions.",
     rules: [
       "Stay on-site for 72 hours",
       "No pre-built kits",
@@ -68,13 +74,15 @@ const samyutiEvents = [
       "abhilashr.eai24@chanakyauniversity.edu.in",
       "vaibhavkj.ecs24@chanakyauniversity.edu.in",
     ],
+    pdfUrl:
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQCjIZ7hDrK4QaChql6HzX13ARAOWiky-WBWgJRytVOa1VA?e=XSLvcX",
   },
   {
-    title: "Gaming: Code the Past",
+    title: "Indic Game Jam",
     theme: "Strategy & Survival Prototypes",
-    prize: "₹10,000",
+    prize: "₹20,000",
     context:
-      "Build 2D prototypes based on ancient themes like Chanakya's Mandala or The Chakravyuh.",
+      "Build 2D games based on ancient themes like Chanakya's Mandala or The Chakravyuh.",
     rules: [
       "Teams of 2-4",
       "Live modification rounds",
@@ -86,17 +94,19 @@ const samyutiEvents = [
       "yashasgb.eai24@chanakyauniversity.edu.in",
       "sarveshap.eec@chanakyauniversity.edu.in",
     ],
+    pdfUrl:
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQB8lH_PVdvPQq7XlTVxlk5gAVH7G5XyFgn1WqHmrWtHSXc?e=Xglnxi",
   },
   {
     title: "Treasure Hunt",
-    theme: "Logic & Engineering Challenges",
-    prize: "₹30,000",
+    theme: "Logic, clues & engineering",
+    prize: "₹15,000",
     context:
       "A logic-driven event challenging participants through engineering tasks and IKS clues.",
     rules: [
+      "Teams of 2-4",
+      "Extra clues with penalties",
       "No internet or AI allowed",
-      "Real-time lab solving",
-      "Fastest completion wins",
     ],
     leads: ["Prateek Joshi", "Abhishek Yadav K"],
     phones: ["+91 95289 83012", "+91 94834 23550"],
@@ -104,17 +114,18 @@ const samyutiEvents = [
       "prateekj.eve24@chanakyauniversity.edu.in",
       "abhishekyk.ema25@chanakyauniversity.edu.in",
     ],
+    pdfUrl:
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQAJe-zt9FjGTpRaNfG6RktSAVhR39tYzCjRcK_OVYNPvZw?e=83KS7f",
   },
   {
     title: "E-Sports (Valorant)",
     theme: "Tactical 5v5 Tournament",
-    prize: "₹15,500",
-    context:
-      "Five-versus-five tactical shooter tournament played on Mumbai servers.",
+    prize: "₹12,000",
+    context: "5v5 tactical shooter tournament played on Mumbai servers.",
     rules: [
-      "BYO Laptop format",
-      "Engineering quiz map select",
-      "Fair-play protocols apply",
+      "Bring Your Own Laptop format",
+      "5 players per team",
+      "Best of 3 for finals",
     ],
     leads: ["Dheeraj V Gowda", "Adith Aiyanna"],
     phones: ["+91 93537 47945", "+91 74839 26420"],
@@ -122,11 +133,13 @@ const samyutiEvents = [
       "dheerajvg.eai24@chanakyauniversity.edu.in",
       "adithk.ema24@chanakyauniversity.edu.in",
     ],
+    pdfUrl:
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQDh0ZmLjYnRTYh4PrqBA9dDAWJ9caCPKT14-EB-leu-Tlc?e=VCUJnj",
   },
   {
-    title: "Video Creation",
+    title: "Dhristi Manthan",
     theme: "Social Awareness",
-    prize: "₹10,000",
+    prize: "₹18,000",
     context:
       "Create impactful short videos highlighting meaningful real-world challenges.",
     rules: [
@@ -140,11 +153,13 @@ const samyutiEvents = [
       "nikithk.eai24@chanakyauniversity.edu.in",
       "mohammedjm.eve24@chanakyauniversity.edu.in",
     ],
+    pdfUrl:
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQCJ5Scr6YdPQrjpnjHlJNMXAUAx63Nwycnc-ENQCgDCM1E?e=4G2xE7",
   },
   {
     title: "IKS Quiz",
     theme: "Heritage & Wisdom",
-    prize: "₹6,000",
+    prize: "₹9,000",
     context:
       "A dynamic quiz testing multidisciplinary knowledge and Indian Knowledge Systems.",
     rules: [
@@ -158,6 +173,8 @@ const samyutiEvents = [
       "darshanv.eec24@chanakyauniversity.edu.in",
       "vamshik.eec24@chanakyauniversity.edu.in",
     ],
+    pdfUrl:
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQAbJexHEfXzQ6PUwWk3n5GWAW6NU6YDS22Vn-lw_1EmC0w?e=lpz313",
   },
 ];
 
@@ -192,7 +209,7 @@ function EventCard({ event, onOpen }) {
   return (
     <div
       onClick={handleInteraction}
-      className="relative h-[420px] bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden cursor-pointer transition-all duration-300 md:hover:-translate-y-3 md:hover:shadow-2xl border-l-8 border-l-[#C5941C] p-10 flex flex-col justify-between group">
+      className="relative h-105 bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden cursor-pointer transition-all duration-300 md:hover:-translate-y-3 md:hover:shadow-2xl border-l-8 border-l-[#C5941C] p-10 flex flex-col justify-between group">
       <div>
         <p className="text-[10px] font-black text-[#C5941C] uppercase tracking-[0.4em] mb-4">
           {event.theme}
@@ -203,8 +220,8 @@ function EventCard({ event, onOpen }) {
       </div>
       <div className="pt-6 border-t border-gray-50 flex justify-between items-center font-bold text-[#002855]">
         <span className="text-lg">Prize Pool: {event.prize}</span>
-        <span className="text-[10px] uppercase tracking-widest text-[#C5941C]">
-          Explore +
+        <span className="text-xs italic tracking-widest text-[#C5941C]">
+          Click for details
         </span>
       </div>
 
@@ -232,6 +249,25 @@ function EventCard({ event, onOpen }) {
               ))}
             </ul>
           </div>
+          {/* MOBILE PDF DOWNLOAD LINK */}
+          <a
+            href={event.pdfUrl}
+            download
+            className="mt-4 flex items-center gap-2 text-[#C5941C] font-bold text-[10px] uppercase tracking-widest">
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            Full Guidelines PDF
+          </a>
         </div>
         <div className="mt-6 pt-6 border-t border-white/10">
           <p className="text-[10px] text-[#C5941C] font-black uppercase mb-1">

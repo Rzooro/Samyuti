@@ -62,7 +62,7 @@ function App() {
 
         {activeEvent && (
           <div className="fixed inset-0 z-[100] hidden md:flex items-center justify-center p-4 bg-[#002855]/70 backdrop-blur-md transition-all duration-300">
-            <div className="relative w-full max-w-3xl bg-white rounded-[2.5rem] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden border border-gray-100 animate-in zoom-in duration-300">
+            <div className="relative w-full max-w-4xl bg-white rounded-[2.5rem] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden border border-gray-100 animate-in zoom-in duration-300">
               <div className="bg-[#002855] p-10 text-white border-b-4 border-[#C5941C] flex justify-between items-center">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#C5941C] mb-2">
@@ -122,6 +122,25 @@ function App() {
                           </li>
                         ))}
                       </ul>
+                      {/* PC DYNAMIC PDF DOWNLOAD LINK */}
+                      <a
+                        href={activeEvent.pdfUrl}
+                        target="_blank"
+                        className="mt-8 inline-flex items-center gap-3 text-[#C5941C] font-black text-xs uppercase tracking-widest hover:underline decoration-2">
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                          />
+                        </svg>
+                        Download Event Guidelines (PDF)
+                      </a>
                     </div>
                   </div>
                   <div className="space-y-8 border-l border-gray-100 pl-10">
@@ -219,8 +238,7 @@ function App() {
                   Address
                 </p>
                 <p className="text-lg font-light leading-relaxed opacity-80">
-                  Chanakya University Global Campus, NH-648, Polanahalli,
-                  Bengaluru - 562165
+                  Chanakya University Global Campus, Bengaluru - 562165
                 </p>
               </div>
             </div>
@@ -241,11 +259,11 @@ function App() {
       <footer className="bg-[#002855] text-white py-24 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#C5941C] to-transparent opacity-50" />
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-sm text-[#C5941C] font-black uppercase tracking-[1em] mb-10 opacity-80">
+          <p className="text-sm text-[#C5941C] font-black uppercase tracking-[1em] mb-10 opacity-80 text-white">
             Rooted in Ideals • Ascending with Ideas
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">
-            <span className="text-3xl font-libre font-bold uppercase">
+            <span className="text-3xl font-libre font-bold uppercase text-white">
               SAMYUTI 2026
             </span>
             <div className="hidden md:block h-6 w-px bg-white/20" />
@@ -253,7 +271,7 @@ function App() {
               Chanakya University
             </span>
           </div>
-          <p className="text-sm opacity-40">
+          <p className="text-sm opacity-40 text-white">
             © 2026 Chanakya University IIC. All Rights Reserved.
           </p>
         </div>
