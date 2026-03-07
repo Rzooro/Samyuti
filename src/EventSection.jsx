@@ -15,7 +15,7 @@ const samyutiEvents = [
       "vidhuk.ema24@chanakyauniversity.edu.in",
     ],
     pdfUrl:
-      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQBTSM0NRasKRZ74miFhRUz9AQwQjepdty4wQZ6oJ1GCXlA?e=IkdTVp", // Unique link for each event
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQBTSM0NRasKRZ74miFhRUz9AQwQjepdty4wQZ6oJ1GCXlA?e=IkdTVp",
   },
   {
     title: "Vastra Verse",
@@ -62,7 +62,7 @@ const samyutiEvents = [
     theme: "IoT for University, Sustainibilty",
     prize: "₹1,20,000",
     context:
-      "This 72-hour hardware hackathon challenges teams to solve real-world problems by developing functional, innovative prototypes. Participants must apply creative problem-solving and technical skills within the time limit to deliver tangible solutions.",
+      "This 72-hour hardware hackathon challenges teams to solve real-world problems by developing functional, innovative prototypes.",
     rules: [
       "Stay on-site for 72 hours",
       "No pre-built kits",
@@ -180,14 +180,14 @@ const samyutiEvents = [
 
 export default function EventSection({ onOpenModal }) {
   return (
-    <section className="mb-32">
-      <div className="flex items-center gap-6 mb-16 px-4 max-w-7xl mx-auto">
+    <section className="mb-32 px-4">
+      <div className="flex items-center gap-6 mb-16 max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-libre font-bold text-[#002855]">
           Event Tracks
         </h2>
-        <div className="h-px flex-1 bg-gradient-to-r from-[#C5941C] to-transparent opacity-30" />
+        <div className="h-px flex-1 bg-gradient-to-r from-[#C5941C] to-transparent opacity-40" />
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 max-w-7xl mx-auto">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {samyutiEvents.map((event, idx) => (
           <EventCard
             key={idx}
@@ -209,7 +209,7 @@ function EventCard({ event, onOpen }) {
   return (
     <div
       onClick={handleInteraction}
-      className="relative h-105 bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden cursor-pointer transition-all duration-300 md:hover:-translate-y-3 md:hover:shadow-2xl border-l-8 border-l-[#C5941C] p-10 flex flex-col justify-between group">
+      className="relative h-105 bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden cursor-pointer transition-all duration-300 md:hover:-translate-y-3 md:hover:shadow-2xl border-l-8 border-l-[#C5941C] p-10 flex flex-col justify-between group will-change-transform">
       <div>
         <p className="text-[10px] font-black text-[#C5941C] uppercase tracking-[0.4em] mb-4">
           {event.theme}
@@ -219,9 +219,9 @@ function EventCard({ event, onOpen }) {
         </h3>
       </div>
       <div className="pt-6 border-t border-gray-50 flex justify-between items-center font-bold text-[#002855]">
-        <span className="text-lg">Prize Pool: {event.prize}</span>
+        <span className="text-lg">Pool: {event.prize}</span>
         <span className="text-xs italic tracking-widest text-[#C5941C]">
-          Click for details
+          Explore +
         </span>
       </div>
 
@@ -249,11 +249,11 @@ function EventCard({ event, onOpen }) {
               ))}
             </ul>
           </div>
-          {/* MOBILE PDF DOWNLOAD LINK */}
           <a
             href={event.pdfUrl}
-            download
-            className="mt-4 flex items-center gap-2 text-[#C5941C] font-bold text-[10px] uppercase tracking-widest">
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 flex items-center gap-2 text-[#C5941C] font-bold text-[10px] uppercase tracking-widest bg-white/5 p-3 rounded-xl border border-[#C5941C]/20">
             <svg
               className="w-4 h-4"
               fill="none"
@@ -266,7 +266,7 @@ function EventCard({ event, onOpen }) {
                 d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
             </svg>
-            Full Guidelines PDF
+            Guidelines PDF
           </a>
         </div>
         <div className="mt-6 pt-6 border-t border-white/10">

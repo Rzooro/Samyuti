@@ -1,21 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header.jsx";
 import EventSection from "./EventSection.jsx";
-import usePreventIframeScroll from "./usePreventIframeScroll";
 
 function App() {
   const [formLoaded, setFormLoaded] = useState(false);
   const [activeEvent, setActiveEvent] = useState(null);
 
-  usePreventIframeScroll();
-
   useEffect(() => {
     const handleVisibilityChange = () => {
-      if (document.hidden) {
-        document.title = "Register Now!";
-      } else {
-        document.title = "SAMYUTI 2026";
-      }
+      document.title = document.hidden ? "Register Now!" : "SAMYUTI 2026";
     };
     document.addEventListener("visibilitychange", handleVisibilityChange);
     return () =>
@@ -30,7 +23,7 @@ function App() {
     setTimeout(() => {
       const section = document.getElementById("registration");
       if (section) section.scrollIntoView({ behavior: "smooth" });
-    }, 100);
+    }, 150);
   };
 
   return (
@@ -95,7 +88,7 @@ function App() {
                   <div className="space-y-8">
                     <div>
                       <strong className="uppercase text-[10px] font-black tracking-widest block mb-3 text-gray-400">
-                        Context
+                        Objective
                       </strong>
                       <p className="text-md leading-relaxed opacity-90">
                         {activeEvent.context}
@@ -122,10 +115,10 @@ function App() {
                           </li>
                         ))}
                       </ul>
-                      {/* PC DYNAMIC PDF DOWNLOAD LINK */}
                       <a
                         href={activeEvent.pdfUrl}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="mt-8 inline-flex items-center gap-3 text-[#C5941C] font-black text-xs uppercase tracking-widest hover:underline decoration-2">
                         <svg
                           className="w-5 h-5"
@@ -139,7 +132,7 @@ function App() {
                             d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                           />
                         </svg>
-                        Download Event Guidelines (PDF)
+                        Download Full Guidelines PDF
                       </a>
                     </div>
                   </div>
