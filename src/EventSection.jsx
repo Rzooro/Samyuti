@@ -5,6 +5,7 @@ const samyutiEvents = [
     title: "Smrithi Mandaara",
     theme: "Celebrating Historical Indian Women",
     prize: "₹10,000",
+    date: "March 28, 2026",
     context:
       "Craft original AI-assisted stories highlighting the courage and contributions of iconic historical Indian women.",
     rules: ["Use Perplexity AI", "Max 2000 words", "1-hour duration"],
@@ -21,6 +22,7 @@ const samyutiEvents = [
     title: "Vastra Verse",
     theme: "Traditional Attire & AI Narration",
     prize: "₹24,000",
+    date: "March 28, 2026",
     context:
       "Walk the runway while an AI narrates the cultural significance of your traditional attire.",
     rules: [
@@ -41,6 +43,7 @@ const samyutiEvents = [
     title: "IKS Online Hackathon",
     theme: "Heritage & Tech Innovation",
     prize: "₹60,000",
+    date: "March 18 - 25, 2026",
     context:
       "An open-stack innovation event centered on integrating Indian Knowledge Systems (IKS) with modern AI.",
     rules: [
@@ -59,10 +62,11 @@ const samyutiEvents = [
   },
   {
     title: "Hardware Hackathon",
-    theme: "IoT for University, Sustainibilty",
+    theme: "IoT for University, Sustainability",
     prize: "₹1,20,000",
+    date: "March 28 - 30, 2026",
     context:
-      "This 72-hour hardware hackathon challenges teams to solve real-world problems by developing functional, innovative prototypes.",
+      "Transform raw components into real-world solutions or robotics from scratch on-site over a continuous 72-hour marathon.",
     rules: [
       "Stay on-site for 72 hours",
       "No pre-built kits",
@@ -81,6 +85,7 @@ const samyutiEvents = [
     title: "Indic Game Jam",
     theme: "Strategy & Survival Prototypes",
     prize: "₹20,000",
+    date: "March 30, 2026",
     context:
       "Build 2D games based on ancient themes like Chanakya's Mandala or The Chakravyuh.",
     rules: [
@@ -101,6 +106,7 @@ const samyutiEvents = [
     title: "Treasure Hunt",
     theme: "Logic, clues & engineering",
     prize: "₹15,000",
+    date: "March 30, 2026",
     context:
       "A logic-driven event challenging participants through engineering tasks and IKS clues.",
     rules: [
@@ -121,6 +127,7 @@ const samyutiEvents = [
     title: "E-Sports (Valorant)",
     theme: "Tactical 5v5 Tournament",
     prize: "₹12,000",
+    date: "March 28, 2026",
     context: "5v5 tactical shooter tournament played on Mumbai servers.",
     rules: [
       "Bring Your Own Laptop format",
@@ -134,12 +141,13 @@ const samyutiEvents = [
       "adithk.ema24@chanakyauniversity.edu.in",
     ],
     pdfUrl:
-      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQC15YVTFiaISIzzcjzSKOTMAe_3PzeaMTLWn4FgmXdMsmY?e=tlgh7D",
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQDh0ZmLjYnRTYh4PrqBA9dDAWJ9caCPKT14-EB-leu-Tlc?e=VCUJnj",
   },
   {
     title: "Dhristi Manthan",
     theme: "Social Awareness",
     prize: "₹18,000",
+    date: "March 28, 2026",
     context:
       "Create impactful short videos highlighting meaningful real-world challenges.",
     rules: [
@@ -160,6 +168,7 @@ const samyutiEvents = [
     title: "IKS Quiz",
     theme: "Heritage & Wisdom",
     prize: "₹9,000",
+    date: "March 30, 2026",
     context:
       "A dynamic quiz testing multidisciplinary knowledge and Indian Knowledge Systems.",
     rules: [
@@ -180,14 +189,14 @@ const samyutiEvents = [
 
 export default function EventSection({ onOpenModal }) {
   return (
-    <section className="mb-32 px-4">
-      <div className="flex items-center gap-6 mb-16 max-w-7xl mx-auto">
+    <section className="mb-32">
+      <div className="flex items-center gap-6 mb-16 px-4 max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-libre font-bold text-[#002855]">
           Event Tracks
         </h2>
-        <div className="h-px flex-1 bg-gradient-to-r from-[#C5941C] to-transparent opacity-40" />
+        <div className="h-px flex-1 bg-gradient-to-r from-[#C5941C] to-transparent opacity-30" />
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 max-w-7xl mx-auto">
         {samyutiEvents.map((event, idx) => (
           <EventCard
             key={idx}
@@ -209,7 +218,7 @@ function EventCard({ event, onOpen }) {
   return (
     <div
       onClick={handleInteraction}
-      className="relative h-105 bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden cursor-pointer transition-all duration-300 md:hover:-translate-y-3 md:hover:shadow-2xl border-l-8 border-l-[#C5941C] p-10 flex flex-col justify-between group will-change-transform">
+      className="relative h-105 bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden cursor-pointer transition-all duration-300 md:hover:-translate-y-3 md:hover:shadow-2xl border-l-8 border-l-[#C5941C] p-10 flex flex-col justify-between group will-change-transform transform-gpu">
       <div>
         <p className="text-[10px] font-black text-[#C5941C] uppercase tracking-[0.4em] mb-4">
           {event.theme}
@@ -219,18 +228,24 @@ function EventCard({ event, onOpen }) {
         </h3>
       </div>
       <div className="pt-6 border-t border-gray-50 flex justify-between items-center font-bold text-[#002855]">
-        <span className="text-lg">Pool: {event.prize}</span>
-        <span className="text-xs italic tracking-widest text-[#C5941C]">
+        <span className="text-lg">Prize Pool: {event.prize}</span>
+        <span className="text-[10px] uppercase tracking-widest text-[#C5941C]">
           Explore +
         </span>
       </div>
 
       <div
         className={`absolute inset-0 bg-[#002855] p-10 transition-transform duration-300 ease-in-out flex flex-col z-20 md:hidden ${isTapped ? "translate-y-0" : "translate-y-full"}`}>
-        <h4 className="text-[#C5941C] font-libre font-bold text-2xl mb-6 border-b border-[#C5941C]/30 pb-3">
+        <h4 className="text-[#C5941C] font-libre font-bold text-2xl mb-4 border-b border-[#C5941C]/30 pb-3">
           Event Intel
         </h4>
-        <div className="flex-1 overflow-y-auto pr-3 space-y-6 text-white/90 text-sm scrollbar-thin scrollbar-thumb-[#C5941C] scrollbar-track-transparent">
+        <div className="flex-1 overflow-y-auto pr-2 space-y-6 text-white/90 text-sm scrollbar-thin scrollbar-thumb-[#C5941C] scrollbar-track-transparent">
+          <div>
+            <strong className="text-[#C5941C] text-[10px] uppercase block mb-1">
+              Schedule:
+            </strong>
+            {event.date}
+          </div>
           <p>
             <strong className="text-[#C5941C] text-[10px] uppercase block mb-1">
               Context:
@@ -253,7 +268,7 @@ function EventCard({ event, onOpen }) {
             href={event.pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 flex items-center gap-2 text-[#C5941C] font-bold text-[10px] uppercase tracking-widest bg-white/5 p-3 rounded-xl border border-[#C5941C]/20">
+            className="mt-4 flex items-center gap-2 text-[#C5941C] font-bold text-[10px] uppercase tracking-widest bg-white/5 p-3 rounded-xl border border-[#C5941C]/20 shadow-sm active:scale-95 transition-transform">
             <svg
               className="w-4 h-4"
               fill="none"

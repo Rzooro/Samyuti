@@ -8,7 +8,11 @@ function App() {
 
   useEffect(() => {
     const handleVisibilityChange = () => {
-      document.title = document.hidden ? "Register Now!" : "SAMYUTI 2026";
+      if (document.hidden) {
+        document.title = "Register Now!";
+      } else {
+        document.title = "SAMYUTI 2026";
+      }
     };
     document.addEventListener("visibilitychange", handleVisibilityChange);
     return () =>
@@ -23,13 +27,14 @@ function App() {
     setTimeout(() => {
       const section = document.getElementById("registration");
       if (section) section.scrollIntoView({ behavior: "smooth" });
-    }, 150);
+    }, 100);
   };
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-[#002855] font-['Inter'] scroll-smooth">
       <Header />
 
+      {/* Hero Section */}
       <section className="pt-48 pb-20 px-4 text-center bg-white border-b border-gray-100">
         <h1 className="text-6xl md:text-8xl font-libre font-bold mb-6 tracking-tight uppercase">
           SAMYUTI <span className="text-[#C5941C]">2026</span>
@@ -45,14 +50,16 @@ function App() {
       </section>
 
       <main className="max-w-7xl mx-auto px-4 py-16">
+        {/* Infobox Ribbon */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-24 border-2 border-[#C5941C] rounded-xl overflow-hidden shadow-xl bg-white">
-          <InfoBox label="Event Dates" value="MARCH 28 - 31, 2026" />
+          <InfoBox label="Event Dates" value="MARCH 28 - 30, 2026" />
           <InfoBox label="Primary Venue" value="GLOBAL CAMPUS, CU" border />
           <InfoBox label="Registration" value="BY MARCH 10, 2026" />
         </div>
 
         <EventSection onOpenModal={(event) => setActiveEvent(event)} />
 
+        {/* Modal Build */}
         {activeEvent && (
           <div className="fixed inset-0 z-[100] hidden md:flex items-center justify-center p-4 bg-[#002855]/70 backdrop-blur-md transition-all duration-300">
             <div className="relative w-full max-w-4xl bg-white rounded-[2.5rem] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden border border-gray-100 animate-in zoom-in duration-300">
@@ -86,6 +93,12 @@ function App() {
               <div className="p-12 max-h-[50vh] overflow-y-auto scrollbar-thin scrollbar-thumb-[#C5941C] scrollbar-track-gray-50">
                 <div className="grid md:grid-cols-2 gap-10 text-[#002855]">
                   <div className="space-y-8">
+                    <div>
+                      <strong className="uppercase text-[10px] font-black tracking-widest block mb-1 text-gray-400">
+                        Scheduled Date
+                      </strong>
+                      <p className="text-lg font-bold">{activeEvent.date}</p>
+                    </div>
                     <div>
                       <strong className="uppercase text-[10px] font-black tracking-widest block mb-3 text-gray-400">
                         Objective
@@ -132,7 +145,7 @@ function App() {
                             d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                           />
                         </svg>
-                        Download Full Guidelines PDF
+                        Download Event Guidelines (PDF)
                       </a>
                     </div>
                   </div>
@@ -183,6 +196,7 @@ function App() {
           </div>
         )}
 
+        {/* Portal Section */}
         <section
           id="registration"
           className="group bg-white rounded-[2.5rem] shadow-2xl border border-gray-200 overflow-hidden mb-32">
@@ -200,7 +214,7 @@ function App() {
           <div className="relative min-h-[900px] bg-gray-50">
             {!formLoaded && (
               <div className="absolute inset-0 flex justify-center items-center bg-white z-10 text-[#002855] font-bold tracking-[0.5em] animate-pulse">
-                ESTABLISHING CONNECTION...
+                CONNECTING TO UNIVERSITY SERVER...
               </div>
             )}
             <iframe
@@ -212,19 +226,34 @@ function App() {
           </div>
         </section>
 
+        {/* Campus Logistics Section */}
         <section className="flex flex-col lg:flex-row gap-8 mb-32 items-stretch">
           <div className="flex-1 bg-[#002855] text-white p-12 rounded-[2.5rem] shadow-xl border-b-8 border-[#C5941C] flex flex-col justify-center">
             <h2 className="text-4xl font-libre font-bold mb-8 border-b border-white/10 pb-4">
               Campus Logistics
             </h2>
             <div className="space-y-10">
-              <div>
-                <p className="text-[#C5941C] text-[10px] font-black uppercase tracking-widest mb-3">
-                  Support
-                </p>
-                <p className="text-xl font-bold">
-                  iic@chanakyauniversity.edu.in
-                </p>
+              <div className="flex flex-col md:flex-row gap-6 md:gap-10">
+                <div>
+                  <p className="text-[#C5941C] text-[10px] font-black uppercase tracking-widest mb-3">
+                    Support Email
+                  </p>
+                  <p className="text-xl font-bold">
+                    iic@chanakyauniversity.edu.in
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[#C5941C] text-[10px] font-black uppercase tracking-widest mb-3">
+                    Instagram
+                  </p>
+                  <a
+                    href="https://www.instagram.com/iic_chanakya"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl font-bold hover:text-[#C5941C] transition-colors">
+                    @iic_chanakya
+                  </a>
+                </div>
               </div>
               <div>
                 <p className="text-[#C5941C] text-[10px] font-black uppercase tracking-widest mb-3">
@@ -252,7 +281,7 @@ function App() {
       <footer className="bg-[#002855] text-white py-24 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#C5941C] to-transparent opacity-50" />
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-sm text-[#C5941C] font-black uppercase tracking-[1em] mb-10 opacity-80 text-white">
+          <p className="text-sm text-[#C5941C] font-black uppercase tracking-[1em] mb-10 opacity-80">
             Rooted in Ideals • Ascending with Ideas
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">
