@@ -6,6 +6,7 @@ function App() {
   const [formLoaded, setFormLoaded] = useState(false);
   const [activeEvent, setActiveEvent] = useState(null);
 
+  // Dynamic Browser Tab Title Logic
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (document.hidden) {
@@ -17,6 +18,33 @@ function App() {
     document.addEventListener("visibilitychange", handleVisibilityChange);
     return () =>
       document.removeEventListener("visibilitychange", handleVisibilityChange);
+  }, []);
+
+  useEffect(() => {
+    let lock = true;
+
+    // keep scroll locked for a short period while iframe initializes
+    const unlockTimer = setTimeout(() => {
+      lock = false;
+    }, 3000); // slightly longer than the iframe initialization
+
+    const handleFocusSteal = () => {
+      if (!lock) return;
+
+      // if iframe steals focus while near the top, snap back
+      if (window.scrollY < 1200) {
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: 0, behavior: "auto" });
+        });
+      }
+    };
+
+    window.addEventListener("blur", handleFocusSteal);
+
+    return () => {
+      clearTimeout(unlockTimer);
+      window.removeEventListener("blur", handleFocusSteal);
+    };
   }, []);
 
   const microsoftFormUrl =
@@ -34,7 +62,6 @@ function App() {
     <div className="min-h-screen bg-[#FAFAFA] text-[#002855] font-['Inter'] scroll-smooth">
       <Header />
 
-      {/* Hero Section */}
       <section className="pt-48 pb-20 px-4 text-center bg-white border-b border-gray-100">
         <h1 className="text-6xl md:text-8xl font-libre font-bold mb-6 tracking-tight uppercase">
           SAMYUTI <span className="text-[#C5941C]">2026</span>
@@ -50,16 +77,14 @@ function App() {
       </section>
 
       <main className="max-w-7xl mx-auto px-4 py-16">
-        {/* Infobox Ribbon */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-24 border-2 border-[#C5941C] rounded-xl overflow-hidden shadow-xl bg-white">
           <InfoBox label="Event Dates" value="MARCH 28 - 30, 2026" />
           <InfoBox label="Primary Venue" value="GLOBAL CAMPUS, CU" border />
-          <InfoBox label="Registration" value="BY MARCH 10, 2026" />
+          <InfoBox label="Registration" value="BY MARCH 25, 2026" />
         </div>
 
         <EventSection onOpenModal={(event) => setActiveEvent(event)} />
 
-        {/* Modal Build */}
         {activeEvent && (
           <div className="fixed inset-0 z-[100] hidden md:flex items-center justify-center p-4 bg-[#002855]/70 backdrop-blur-md transition-all duration-300">
             <div className="relative w-full max-w-4xl bg-white rounded-[2.5rem] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden border border-gray-100 animate-in zoom-in duration-300">
@@ -94,14 +119,8 @@ function App() {
                 <div className="grid md:grid-cols-2 gap-10 text-[#002855]">
                   <div className="space-y-8">
                     <div>
-                      <strong className="uppercase text-[10px] font-black tracking-widest block mb-1 text-gray-400">
-                        Scheduled Date
-                      </strong>
-                      <p className="text-lg font-bold">{activeEvent.date}</p>
-                    </div>
-                    <div>
                       <strong className="uppercase text-[10px] font-black tracking-widest block mb-3 text-gray-400">
-                        Objective
+                        Context
                       </strong>
                       <p className="text-md leading-relaxed opacity-90">
                         {activeEvent.context}
@@ -131,7 +150,6 @@ function App() {
                       <a
                         href={activeEvent.pdfUrl}
                         target="_blank"
-                        rel="noopener noreferrer"
                         className="mt-8 inline-flex items-center gap-3 text-[#C5941C] font-black text-xs uppercase tracking-widest hover:underline decoration-2">
                         <svg
                           className="w-5 h-5"
@@ -196,7 +214,6 @@ function App() {
           </div>
         )}
 
-        {/* Portal Section */}
         <section
           id="registration"
           className="group bg-white rounded-[2.5rem] shadow-2xl border border-gray-200 overflow-hidden mb-32">
@@ -214,7 +231,7 @@ function App() {
           <div className="relative min-h-[900px] bg-gray-50">
             {!formLoaded && (
               <div className="absolute inset-0 flex justify-center items-center bg-white z-10 text-[#002855] font-bold tracking-[0.5em] animate-pulse">
-                CONNECTING TO UNIVERSITY SERVER...
+                ESTABLISHING CONNECTION...
               </div>
             )}
             <iframe
@@ -222,21 +239,21 @@ function App() {
               className="absolute inset-0 w-full h-full"
               onLoad={() => setFormLoaded(true)}
               title="Registration"
+              tabIndex="-1"
             />
           </div>
         </section>
 
-        {/* Campus Logistics Section */}
         <section className="flex flex-col lg:flex-row gap-8 mb-32 items-stretch">
           <div className="flex-1 bg-[#002855] text-white p-12 rounded-[2.5rem] shadow-xl border-b-8 border-[#C5941C] flex flex-col justify-center">
             <h2 className="text-4xl font-libre font-bold mb-8 border-b border-white/10 pb-4">
               Campus Logistics
             </h2>
             <div className="space-y-10">
-              <div className="flex flex-col md:flex-row gap-6 md:gap-10">
-                <div>
+              <div className="flex flex-col md:flex-row md:gap-12">
+                <div className="mb-6 md:mb-0">
                   <p className="text-[#C5941C] text-[10px] font-black uppercase tracking-widest mb-3">
-                    Support Email
+                    Support
                   </p>
                   <p className="text-xl font-bold">
                     iic@chanakyauniversity.edu.in
@@ -247,11 +264,11 @@ function App() {
                     Instagram
                   </p>
                   <a
-                    href="https://www.instagram.com/iic_chanakya"
+                    href="https://www.instagram.com/samyuti.official/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xl font-bold hover:text-[#C5941C] transition-colors">
-                    @iic_chanakya
+                    @samyuti.official
                   </a>
                 </div>
               </div>
