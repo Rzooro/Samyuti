@@ -47,6 +47,49 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    let hasUserScrolled = false;
+    const timeouts = [];
+
+    const onUserScroll = () => {
+      if (window.scrollY > 0) {
+        hasUserScrolled = true;
+        window.removeEventListener("scroll", onUserScroll);
+      }
+    };
+    window.addEventListener("scroll", onUserScroll, { passive: true });
+
+    const forceScrollToTop = (delay) => {
+      const id = setTimeout(() => {
+        if (!hasUserScrolled) {
+          window.scrollTo({ top: 0, behavior: "auto" });
+        }
+      }, delay);
+      timeouts.push(id);
+    };
+
+    // After iframe loads, queue multiple scroll resets
+    const iframe = document.querySelector('iframe[title="Registration"]');
+    const onIframeLoad = () => {
+      // Reset at various intervals to catch late focus attempts
+      [0, 300, 800, 1500].forEach(forceScrollToTop);
+    };
+
+    if (iframe) {
+      iframe.addEventListener("load", onIframeLoad);
+      // If iframe already loaded, trigger immediately
+      if (iframe.contentDocument?.readyState === "complete") {
+        onIframeLoad();
+      }
+    }
+
+    return () => {
+      window.removeEventListener("scroll", onUserScroll);
+      if (iframe) iframe.removeEventListener("load", onIframeLoad);
+      timeouts.forEach(clearTimeout);
+    };
+  }, []);
+
   const microsoftFormUrl =
     "https://forms.office.com/Pages/ResponsePage.aspx?id=vOOLNLOpdUel8NOiEjo_Mwj5KIY3m59CiLB3eRlQVhRUNVk5NVU1TDFLNVNCNEZOWFNLVTBTU05VQy4u";
 

@@ -62,13 +62,13 @@ const samyutiEvents = [
   },
   {
     title: "Hardware Hackathon",
-    theme: "IoT for University, Sustainability",
+    theme: "IoT & Sustainability",
     prize: "₹1,20,000",
     date: "March 28 - 30, 2026",
     context:
-      "Transform raw components into real-world solutions or robotics from scratch on-site over a continuous 72-hour marathon.",
+      "This hackathon is designed to engage participants in solving real-world problems through a hardware-focused, problem-solving approach. Teams will be allocated 48 hours to address a real-world problem and develop a functional prototype. It is expected that teams will utilise innovative methods to resolve these challenges.",
     rules: [
-      "Stay on-site for 72 hours",
+      "Stay on-site for 48 hours",
       "No pre-built kits",
       "Build from scratch on-site",
     ],
@@ -79,7 +79,7 @@ const samyutiEvents = [
       "vaibhavkj.ecs24@chanakyauniversity.edu.in",
     ],
     pdfUrl:
-      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQCjIZ7hDrK4QaChql6HzX13ARAOWiky-WBWgJRytVOa1VA?e=XSLvcX",
+      " https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQCjDJNYilXcRrxD_mLyybSjAWrcKDgMOmmYxP3c9cxKJzc?e=8I9V3I",
   },
   {
     title: "Indic Game Jam",
@@ -91,7 +91,7 @@ const samyutiEvents = [
     rules: [
       "Teams of 2-4",
       "Live modification rounds",
-      "Unity, Godot, Gdevelop allowed",
+      "Teams are allowed to use any platform, language, or engine to build the game",
     ],
     leads: ["Yashas G Hombal", "Sarvesh A Patil"],
     phones: ["+91 99860 62018", "+91 63611 65646"],
@@ -100,7 +100,7 @@ const samyutiEvents = [
       "sarveshap.eec@chanakyauniversity.edu.in",
     ],
     pdfUrl:
-      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQB8lH_PVdvPQq7XlTVxlk5gAVH7G5XyFgn1WqHmrWtHSXc?e=Xglnxi",
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQDkZTWz4h7TS5jHDb-s_GEmAa9HN6JP8X2yvMU6LMeTgMs?e=08Ra5a",
   },
   {
     title: "Treasure Hunt",
@@ -141,7 +141,7 @@ const samyutiEvents = [
       "adithk.ema24@chanakyauniversity.edu.in",
     ],
     pdfUrl:
-      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQDh0ZmLjYnRTYh4PrqBA9dDAWJ9caCPKT14-EB-leu-Tlc?e=VCUJnj",
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQC15YVTFiaISIzzcjzSKOTMAe_3PzeaMTLWn4FgmXdMsmY?e=YquN9G",
   },
   {
     title: "Dhristi Manthan",
