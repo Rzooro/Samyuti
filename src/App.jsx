@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header.jsx";
 import EventSection from "./EventSection.jsx";
-import { Analytics } from "@vercel/analytics/next";
 
 function App() {
   const [formLoaded, setFormLoaded] = useState(false);
@@ -105,7 +104,6 @@ function App() {
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-[#002855] font-['Inter'] scroll-smooth">
       <Header />
-      <Analytics />
 
       <section className="pt-48 pb-20 px-4 text-center bg-white border-b border-gray-100">
         <h1 className="text-6xl md:text-8xl font-libre font-bold mb-6 tracking-tight uppercase">
