@@ -307,11 +307,11 @@ function App() {
                     Instagram
                   </p>
                   <a
-                    href="https://www.instagram.com/samyuti.official/"
+                    href="https://www.instagram.com/iic_chanakya/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xl font-bold hover:text-[#C5941C] transition-colors">
-                    @samyuti.official
+                    @iic_chanakya
                   </a>
                 </div>
               </div>

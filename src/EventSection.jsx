@@ -229,8 +229,8 @@ function EventCard({ event, onOpen }) {
       </div>
       <div className="pt-6 border-t border-gray-50 flex justify-between items-center font-bold text-[#002855]">
         <span className="text-lg">Prize Pool: {event.prize}</span>
-        <span className="text-[10px] uppercase tracking-widest text-[#C5941C]">
-          Explore +
+        <span className="text-xs italic tracking-widest text-[#C5941C]">
+          Click to Explore
         </span>
       </div>
 
