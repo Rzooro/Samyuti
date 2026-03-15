@@ -58,7 +58,7 @@ const samyutiEvents = [
       "suprajnah.eai24@chanakyauniversity.edu.in",
     ],
     pdfUrl:
-      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQA2vgS5y-LhQowoh06CHvqMAXKaQTIoBrUTdLb2arUuns0?e=n1Sox7",
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQARg7KldsUZTozRG2SsY1pfATFXfeiBjFrTeXuR6jUdqx4?e=VzoW37",
   },
   {
     title: "Hardware Hackathon",
