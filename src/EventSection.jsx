@@ -80,6 +80,8 @@ const samyutiEvents = [
     ],
     pdfUrl:
       " https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQCjDJNYilXcRrxD_mLyybSjAWrcKDgMOmmYxP3c9cxKJzc?e=8I9V3I",
+    problemStatementUrl:
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQBMHLxi4eiNSYSWms368-unASjNnaaRkJb1yzTcyvywFWs?e=YWpjSt",
   },
   {
     title: "Indic Game Jam",
@@ -264,25 +266,48 @@ function EventCard({ event, onOpen }) {
               ))}
             </ul>
           </div>
-          <a
-            href={event.pdfUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 flex items-center gap-2 text-[#C5941C] font-bold text-[10px] uppercase tracking-widest bg-white/5 p-3 rounded-xl border border-[#C5941C]/20 shadow-sm active:scale-95 transition-transform">
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
-            Guidelines PDF
-          </a>
+          <div className="flex flex-col gap-3 mt-4">
+            <a
+              href={event.pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-[#C5941C] font-bold text-[10px] uppercase tracking-widest bg-white/5 p-3 rounded-xl border border-[#C5941C]/20 shadow-sm active:scale-95 transition-transform">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+              Guidelines PDF
+            </a>
+            {event.problemStatementUrl && (
+              <a
+                href={event.problemStatementUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-white font-bold text-[10px] uppercase tracking-widest bg-[#C5941C]/80 p-3 rounded-xl border border-[#C5941C] shadow-sm active:scale-95 transition-transform">
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+                Problem Statement
+              </a>
+            )}
+          </div>
         </div>
         <div className="mt-6 pt-6 border-t border-white/10">
           <p className="text-[10px] text-[#C5941C] font-black uppercase mb-1">

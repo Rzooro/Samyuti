@@ -162,6 +162,12 @@ function App() {
                 <div className="grid md:grid-cols-2 gap-10 text-[#002855]">
                   <div className="space-y-8">
                     <div>
+                      <strong className="uppercase text-[10px] font-black tracking-widest block mb-1 text-gray-400">
+                        Scheduled Date
+                      </strong>
+                      <p className="text-lg font-bold">{activeEvent.date}</p>
+                    </div>
+                    <div>
                       <strong className="uppercase text-[10px] font-black tracking-widest block mb-3 text-gray-400">
                         Context
                       </strong>
@@ -190,24 +196,48 @@ function App() {
                           </li>
                         ))}
                       </ul>
-                      <a
-                        href={activeEvent.pdfUrl}
-                        target="_blank"
-                        className="mt-8 inline-flex items-center gap-3 text-[#C5941C] font-black text-xs uppercase tracking-widest hover:underline decoration-2">
-                        <svg
-                          className="w-5 h-5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24">
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                          />
-                        </svg>
-                        Download Event Guidelines (PDF)
-                      </a>
+                      <div className="flex flex-col gap-4 mt-8">
+                        <a
+                          href={activeEvent.pdfUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-3 text-[#C5941C] font-black text-xs uppercase tracking-widest hover:underline decoration-2">
+                          <svg
+                            className="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                            />
+                          </svg>
+                          Download Event Guidelines (PDF)
+                        </a>
+                        {activeEvent.problemStatementUrl && (
+                          <a
+                            href={activeEvent.problemStatementUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-3 text-[#002855] font-black text-xs uppercase tracking-widest hover:underline decoration-2">
+                            <svg
+                              className="w-5 h-5"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24">
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                              />
+                            </svg>
+                            Download Problem Statement
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                   <div className="space-y-8 border-l border-gray-100 pl-10">
@@ -364,7 +394,9 @@ function App() {
 
 const InfoBox = ({ label, value, border }) => (
   <div
-    className={`p-10 bg-white text-center flex flex-col justify-center ${border ? "md:border-x-2 border-[#C5941C]" : ""}`}>
+    className={`p-10 bg-white text-center flex flex-col justify-center ${
+      border ? "md:border-x-2 border-[#C5941C]" : ""
+    }`}>
     <h4 className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">
       {label}
     </h4>
