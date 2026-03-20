@@ -120,6 +120,31 @@ function App() {
       </section>
 
       <main className="max-w-7xl mx-auto px-4 py-16">
+        {/* Global Announcement Banner */}
+        <div className="bg-[#002855] border-l-4 border-red-500 text-white px-6 py-4 rounded-r-xl mb-12 flex flex-col md:flex-row items-center justify-center gap-4 shadow-md">
+          <div className="flex items-center gap-2 text-red-400">
+            <svg
+              className="w-5 h-5 animate-pulse"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+              />
+            </svg>
+            <span className="font-black uppercase tracking-widest text-[10px] md:text-xs">
+              Update
+            </span>
+          </div>
+          <span className="text-xs md:text-sm font-semibold tracking-wide text-center md:text-left opacity-90">
+            IKS Online Hackathon registration closes tomorrow,{" "}
+            <strong>March 21st at 9:30 PM IST</strong>.
+          </span>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-24 border-2 border-[#C5941C] rounded-xl overflow-hidden shadow-xl bg-white">
           <InfoBox label="Event Dates" value="MARCH 28 - 30, 2026" />
           <InfoBox label="Primary Venue" value="GLOBAL CAMPUS, CU" border />
@@ -166,6 +191,23 @@ function App() {
                         Scheduled Date
                       </strong>
                       <p className="text-lg font-bold">{activeEvent.date}</p>
+                      {activeEvent.deadline && (
+                        <p className="text-xs font-black text-red-600 mt-1 uppercase tracking-widest flex items-center gap-1">
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                            />
+                          </svg>
+                          Closes: {activeEvent.deadline}
+                        </p>
+                      )}
                     </div>
                     <div>
                       <strong className="uppercase text-[10px] font-black tracking-widest block mb-3 text-gray-400">
@@ -312,7 +354,6 @@ function App() {
               className="absolute inset-0 w-full h-full"
               onLoad={() => setFormLoaded(true)}
               title="Registration"
-              tabIndex="-1"
             />
           </div>
         </section>
@@ -371,7 +412,7 @@ function App() {
       <footer className="bg-[#002855] text-white py-24 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#C5941C] to-transparent opacity-50" />
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-sm text-[#C5941C] font-black uppercase tracking-[1em] mb-10 opacity-80">
+          <p className="text-sm text-[#C5941C] font-black uppercase tracking-[1em] mb-10 opacity-80 text-white">
             Rooted in Ideals • Ascending with Ideas
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">

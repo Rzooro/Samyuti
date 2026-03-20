@@ -43,7 +43,8 @@ const samyutiEvents = [
     title: "IKS Online Hackathon",
     theme: "Heritage & Tech Innovation",
     prize: "₹60,000",
-    date: "March 18 - 25, 2026",
+    date: "March 22 - 29, 2026",
+    deadline: "March 21, 2026 @ 9:30 PM IST",
     context:
       "An open-stack innovation event centered on integrating Indian Knowledge Systems (IKS) with modern AI.",
     rules: [
@@ -247,6 +248,11 @@ function EventCard({ event, onOpen }) {
               Schedule:
             </strong>
             {event.date}
+            {event.deadline && (
+              <span className="block mt-1 text-red-400 font-bold text-[10px] uppercase tracking-widest">
+                ⚠️ Closes: {event.deadline}
+              </span>
+            )}
           </div>
           <p>
             <strong className="text-[#C5941C] text-[10px] uppercase block mb-1">
