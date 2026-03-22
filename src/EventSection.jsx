@@ -40,28 +40,6 @@ const samyutiEvents = [
       "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQAcvXjPTowCRJqzWV4kaladAdcKHgyNwFcFxLlnzmLxDbQ?e=mgq53V",
   },
   {
-    title: "IKS Online Hackathon",
-    theme: "Heritage & Tech Innovation",
-    prize: "₹60,000",
-    date: "March 22 - 29, 2026",
-    deadline: "March 21, 2026 @ 9:30 PM IST",
-    context:
-      "An open-stack innovation event centered on integrating Indian Knowledge Systems (IKS) with modern AI.",
-    rules: [
-      "Teams of 2-4",
-      "Video pitch & Git repository",
-      "Live demo for finalists in Campus",
-    ],
-    leads: ["Prithvi S Hegde", "Suprajna S"],
-    phones: ["+91 70195 38181", "+91 97315 77988"],
-    emails: [
-      "prithvih.ecs24@chanakyauniversity.edu.in",
-      "suprajnah.eai24@chanakyauniversity.edu.in",
-    ],
-    pdfUrl:
-      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQARg7KldsUZTozRG2SsY1pfATFXfeiBjFrTeXuR6jUdqx4?e=VzoW37",
-  },
-  {
     title: "Hardware Hackathon",
     theme: "IoT & Sustainability",
     prize: "₹1,20,000",
