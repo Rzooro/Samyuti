@@ -243,17 +243,6 @@ function EventCard({ event, onOpen }) {
           Event Intel
         </h4>
         <div className="flex-1 overflow-y-auto pr-2 space-y-6 text-white/90 text-sm scrollbar-thin scrollbar-thumb-[#C5941C] scrollbar-track-transparent">
-          <div>
-            <strong className="text-[#C5941C] text-[10px] uppercase block mb-1">
-              Schedule:
-            </strong>
-            {event.date}
-            {event.deadline && (
-              <span className="block mt-1 text-red-400 font-bold text-[10px] uppercase tracking-widest">
-                ⚠️ Closes: {event.deadline}
-              </span>
-            )}
-          </div>
           <p>
             <strong className="text-[#C5941C] text-[10px] uppercase block mb-1">
               Context:
