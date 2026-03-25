@@ -40,6 +40,28 @@ const samyutiEvents = [
       "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQAcvXjPTowCRJqzWV4kaladAdcKHgyNwFcFxLlnzmLxDbQ?e=mgq53V",
   },
   {
+    title: "IKS Online Hackathon",
+    theme: "Heritage & Tech Innovation",
+    prize: "₹60,000",
+    date: "March 18 - 25, 2026",
+    status: "Registration Closed — Event Commenced",
+    context:
+      "An open-stack innovation event centered on integrating Indian Knowledge Systems (IKS) with modern AI.",
+    rules: [
+      "Teams of 2-4",
+      "Video pitch & Git repository",
+      "Live demo for finalists in Campus",
+    ],
+    leads: ["Prithvi S Hegde", "Suprajna S"],
+    phones: ["+91 70195 38181", "+91 97315 77988"],
+    emails: [
+      "prithvih.ecs24@chanakyauniversity.edu.in",
+      "suprajnah.eai24@chanakyauniversity.edu.in",
+    ],
+    pdfUrl:
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQCUzrVvuGJfS4l3awaJjLheAZcJGhqTsnx24CFynDkYknI?e=FhmbqO",
+  },
+  {
     title: "Hardware Hackathon",
     theme: "IoT & Sustainability",
     prize: "₹1,20,000",
@@ -221,6 +243,17 @@ function EventCard({ event, onOpen }) {
           Event Intel
         </h4>
         <div className="flex-1 overflow-y-auto pr-2 space-y-6 text-white/90 text-sm scrollbar-thin scrollbar-thumb-[#C5941C] scrollbar-track-transparent">
+          <div>
+            <strong className="text-[#C5941C] text-[10px] uppercase block mb-1">
+              Schedule:
+            </strong>
+            {event.date}
+            {event.status && (
+              <span className="block mt-1 text-red-400 font-bold text-[10px] uppercase tracking-widest">
+                🔴 {event.status}
+              </span>
+            )}
+          </div>
           <p>
             <strong className="text-[#C5941C] text-[10px] uppercase block mb-1">
               Context:

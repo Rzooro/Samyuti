@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Header from "./Header.jsx";
 import EventSection from "./EventSection.jsx";
 
@@ -104,6 +105,7 @@ function App() {
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-[#002855] font-['Inter'] scroll-smooth">
       <Header />
+      <Analytics />
 
       <section className="pt-48 pb-20 px-4 text-center bg-white border-b border-gray-100">
         <h1 className="text-6xl md:text-8xl font-libre font-bold mb-6 tracking-tight uppercase">
@@ -166,6 +168,11 @@ function App() {
                         Scheduled Date
                       </strong>
                       <p className="text-lg font-bold">{activeEvent.date}</p>
+                      {activeEvent.status && (
+                        <p className="text-xs font-black text-red-600 mt-1 uppercase tracking-widest flex items-center gap-1">
+                          🔴 {activeEvent.status}
+                        </p>
+                      )}
                     </div>
                     <div>
                       <strong className="uppercase text-[10px] font-black tracking-widest block mb-3 text-gray-400">
@@ -312,6 +319,7 @@ function App() {
               className="absolute inset-0 w-full h-full"
               onLoad={() => setFormLoaded(true)}
               title="Registration"
+              tabIndex="-1"
             />
           </div>
         </section>
