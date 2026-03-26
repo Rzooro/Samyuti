@@ -125,7 +125,7 @@ function App() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-24 border-2 border-[#C5941C] rounded-xl overflow-hidden shadow-xl bg-white">
           <InfoBox label="Event Dates" value="MARCH 28 - 30, 2026" />
           <InfoBox label="Primary Venue" value="GLOBAL CAMPUS, CU" border />
-          <InfoBox label="Registration" value="BY MARCH 25, 2026" />
+          <InfoBox label="Registration" value="VALORANT ONLY" />
         </div>
 
         <EventSection onOpenModal={(event) => setActiveEvent(event)} />
@@ -284,11 +284,19 @@ function App() {
                     {activeEvent.prize}
                   </span>
                 </div>
-                <button
-                  onClick={handleModalRegister}
-                  className="w-full cursor-pointer md:w-auto bg-[#002855] text-white px-12 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#C5941C] transition-all duration-500 shadow-lg border-2 border-[#C5941C]">
-                  Register Now
-                </button>
+                {activeEvent.status && activeEvent.status.includes("Closed") ? (
+                  <button
+                    disabled
+                    className="w-full md:w-auto bg-gray-300 text-gray-500 px-12 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-xs cursor-not-allowed">
+                    Registration Closed
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleModalRegister}
+                    className="w-full cursor-pointer md:w-auto bg-[#002855] text-white px-12 py-5 rounded-2xl font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#C5941C] transition-all duration-500 shadow-lg border-2 border-[#C5941C]">
+                    Register Now
+                  </button>
+                )}
               </div>
             </div>
           </div>

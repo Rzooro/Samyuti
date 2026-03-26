@@ -6,6 +6,7 @@ const samyutiEvents = [
     theme: "Celebrating Historical Indian Women",
     prize: "₹10,000",
     date: "March 28, 2026",
+    status: "Registration Closed",
     context:
       "Craft original AI-assisted stories highlighting the courage and contributions of iconic historical Indian women.",
     rules: ["Use Perplexity AI", "Max 2000 words", "1-hour duration"],
@@ -23,6 +24,7 @@ const samyutiEvents = [
     theme: "Traditional Attire & AI Narration",
     prize: "₹24,000",
     date: "March 28, 2026",
+    status: "Registration Closed",
     context:
       "Walk the runway while an AI narrates the cultural significance of your traditional attire.",
     rules: [
@@ -59,13 +61,14 @@ const samyutiEvents = [
       "suprajnah.eai24@chanakyauniversity.edu.in",
     ],
     pdfUrl:
-      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQCUzrVvuGJfS4l3awaJjLheAZcJGhqTsnx24CFynDkYknI?e=FhmbqO",
+      "https://chanakyauniversity-my.sharepoint.com/:b:/g/personal/iic_chanakyauniversity_edu_in/IQARg7KldsUZTozRG2SsY1pfATFXfeiBjFrTeXuR6jUdqx4?e=VzoW37",
   },
   {
     title: "Hardware Hackathon",
     theme: "IoT & Sustainability",
     prize: "₹1,20,000",
     date: "March 28 - 30, 2026",
+    status: "Registration Closed",
     context:
       "This hackathon is designed to engage participants in solving real-world problems through a hardware-focused, problem-solving approach. Teams will be allocated 48 hours to address a real-world problem and develop a functional prototype. It is expected that teams will utilise innovative methods to resolve these challenges.",
     rules: [
@@ -89,6 +92,7 @@ const samyutiEvents = [
     theme: "Strategy & Survival Prototypes",
     prize: "₹20,000",
     date: "March 30, 2026",
+    status: "Registration Closed",
     context:
       "Build 2D games based on ancient themes like Chanakya's Mandala or The Chakravyuh.",
     rules: [
@@ -110,6 +114,7 @@ const samyutiEvents = [
     theme: "Logic, clues & engineering",
     prize: "₹15,000",
     date: "March 30, 2026",
+    status: "Registration Closed",
     context:
       "A logic-driven event challenging participants through engineering tasks and IKS clues.",
     rules: [
@@ -151,6 +156,7 @@ const samyutiEvents = [
     theme: "Social Awareness",
     prize: "₹18,000",
     date: "March 28, 2026",
+    status: "Registration Closed",
     context:
       "Create impactful short videos highlighting meaningful real-world challenges.",
     rules: [
@@ -172,6 +178,7 @@ const samyutiEvents = [
     theme: "Heritage & Wisdom",
     prize: "₹9,000",
     date: "March 30, 2026",
+    status: "Registration Closed",
     context:
       "A dynamic quiz testing multidisciplinary knowledge and Indian Knowledge Systems.",
     rules: [
